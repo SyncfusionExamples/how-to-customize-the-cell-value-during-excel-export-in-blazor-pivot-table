@@ -1,2 +1,2 @@
-# how-to-customize-the-cell-value-during-excel-export-in-blazor-pivot-table-
-How to customize the cell value during excel export in blazor pivot table?
+# how to customize the cell value during excel export in blazor pivot table?
+This example shows customizing the cell value during excel export in blazor pivot table.
