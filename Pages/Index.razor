@@ -13,16 +13,9 @@
                 var data = (context as AxisSet);
                 if (data != null)
                 {
-                    if (data.Axis == "value")
+                    if (data.IsGrandSum && data.Axis == "value" && data.ActualText.Equals("Amount"))
                     {
-                        if(data.Value > 1000)
-                        {
-                            <span>Completed</span>
-                        }
-                        else if(data.Value < 1000)
-                        {
-                            <span>Pending</span>
-                        }
+                        @string.Format("$ {0}", data.Value.ToString())
                     }
                     else
                     {
@@ -46,7 +39,7 @@
             <PivotViewValue Name="Amount" Caption="Sold Amount"></PivotViewValue>
         </PivotViewValues>
     </PivotViewDataSourceSettings>
-    <PivotViewEvents TValue="ProductDetails" ExcelQueryCellInfo="ExcelQueryCellInfo"></PivotViewEvents>
+    <PivotViewEvents TValue="ProductDetails" ExcelQueryCellInfo="ExcelQueryCellInfo"/>
 </SfPivotView>
 @code{
     public List<ProductDetails> dataSource { get; set; }
