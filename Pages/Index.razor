@@ -7,7 +7,7 @@
 <SfButton OnClick="@OnClick" IsPrimary="true">Export To Excel</SfButton>
 
 <SfPivotView @ref="Pivot" TValue="ProductDetails" Width="100%" Height="100%" AllowExcelExport="true">
-       <PivotViewTemplates>
+    <PivotViewTemplates>
         <CellTemplate>
             @{
                 var data = (context as AxisSet);
@@ -39,11 +39,11 @@
             <PivotViewValue Name="Amount" Caption="Sold Amount"></PivotViewValue>
         </PivotViewValues>
     </PivotViewDataSourceSettings>
-    <PivotViewEvents TValue="ProductDetails" ExcelQueryCellInfo="ExcelQueryCellInfo"/>
+    <PivotViewEvents TValue="ProductDetails" ExcelQueryCellInfo="ExcelQueryCellInfo" />
 </SfPivotView>
-@code{
+@code {
     public List<ProductDetails> dataSource { get; set; }
-    public SfPivotView<ProductDetails> Pivot {get; set; }
+    public SfPivotView<ProductDetails> Pivot { get; set; }
     public int Count { get; set; } = 1000;
 
     protected override void OnInitialized()
@@ -53,13 +53,13 @@
 
     public void ExcelQueryCellInfo(ExcelQueryCellInfoEventArgs<ProductDetails> args)
     {
-        if(args.Column.Index > 0)
+        if (args.Column.Index > 0)
         {
-            if(Convert.ToInt32(args.Value) > 1000)
+            if (Convert.ToInt32(args.Value) > 1000)
             {
                 args.Cell.Value = "Completed";
             }
-            else if(Convert.ToInt32(args.Value) < 1000)
+            else if (Convert.ToInt32(args.Value) < 1000)
             {
                 args.Cell.Value = "Pending";
             }

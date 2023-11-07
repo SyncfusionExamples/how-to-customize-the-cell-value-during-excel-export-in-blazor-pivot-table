@@ -1,8 +1,8 @@
-namespace BlazorApp4.Data
+namespace CustomizingCellValue.Data
 {
     public class WeatherForecast
     {
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
 
         public int TemperatureC { get; set; }
 
