@@ -1,4 +1,4 @@
-using BlazorApp4.Data;
+using CustomizingCellValue.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Syncfusion.Blazor;
@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddSyncfusionBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddSyncfusionBlazor(options => { options.IgnoreScriptIsolation = false; });
 
 var app = builder.Build();
 

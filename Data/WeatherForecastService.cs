@@ -1,4 +1,4 @@
-namespace BlazorApp4.Data
+namespace CustomizingCellValue.Data
 {
     public class WeatherForecastService
     {
@@ -7,7 +7,7 @@ namespace BlazorApp4.Data
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
+        public Task<WeatherForecast[]> GetForecastAsync(DateOnly startDate)
         {
             return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
